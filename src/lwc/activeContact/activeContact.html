@@ -1,0 +1,6 @@
+<template>
+    <div if:false={isActive} class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+        <lightning-icon icon-name={iconName} alternative-text="Warning" title="Warning" size="x-small"></lightning-icon>
+        <h2>{message}</h2>
+    </div>
+</template>
