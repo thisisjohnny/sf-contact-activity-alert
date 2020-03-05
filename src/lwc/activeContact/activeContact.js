@@ -1,13 +1,17 @@
 import { LightningElement, track, wire, api } from 'lwc';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import DAYS_SINCE_LAST_ACTIVITY from '@salesforce/schema/Contact.Days_Since_Last_Activity__c';
+const SLDS_THEME = 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_';
 
 export default class ActiveContact extends LightningElement {
-    @track isActive = true;
     @api recordId;
     @api threshold;
     @api message;
     @api iconName;
+    @api altText;
+    @api theme;
+    @track isActive = true;
+    @track bannerTheme;
 
     @wire(getRecord, { recordId: '$recordId', fields: [DAYS_SINCE_LAST_ACTIVITY] })
     wiredRecord({ data, error }) {
@@ -26,8 +30,6 @@ export default class ActiveContact extends LightningElement {
     }
 
     connectedCallback() {
-        console.log('Hello world');
-        console.log(this.recordId);
-        console.log(this.threshold);
+        this.bannerTheme =  SLDS_THEME + this.theme;
     }
 }
