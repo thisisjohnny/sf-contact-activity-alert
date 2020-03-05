@@ -13,7 +13,7 @@
             <property label="Banner Message" name="message" type="String" default="This contact may be out of date."></property>
             <property label="Icon Name" name="iconName" type="String" default="utility:warning"></property>
             <property label="Alt Text" name="altText" type="String" default="Warning"></property>
-            <property label="Theme" name="theme" type="String" default="warning" description="Controls the color of the banner. Case sensitive. Can be warning, error, or success. Leave blank for neutral."></property>
+            <property label="Theme" name="theme" type="String" default="warning" description="Controls the color of the banner. Case sensitive. Can be warning, error, success, or info."></property>
             <objects>
                 <object>Contact</object>
             </objects>
